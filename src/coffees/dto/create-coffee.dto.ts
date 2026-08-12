@@ -1,4 +1,10 @@
-import { ArrayNotEmpty, IsArray, IsNotEmpty, IsString } from 'class-validator';
+import {
+  ArrayNotEmpty,
+  IsArray,
+  IsNotEmpty,
+  IsOptional,
+  IsString,
+} from 'class-validator';
 
 export class CreateCoffeeDto {
   @IsString()
@@ -9,8 +15,9 @@ export class CreateCoffeeDto {
   @IsNotEmpty()
   readonly brand!: string;
 
+  @IsOptional()
   @IsArray()
   @ArrayNotEmpty()
   @IsString({ each: true })
-  readonly flavors!: string[];
+  readonly flavors?: string[];
 }
