@@ -19,5 +19,5 @@ export class CreateCoffeeDto {
   @IsArray()
   @ArrayNotEmpty()
   @IsString({ each: true })
-  readonly flavors?: string[];
+  readonly flavors: string[] | null = null;
 }
