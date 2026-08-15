@@ -1,6 +1,7 @@
 services:
   db:
     image: postgres
+    # restart the container automatically after reboot / Docker crash
     restart: always
     ports:
       - 5432:5432
@@ -8,4 +9,5 @@ services:
       POSTGRES_PASSWORD: '123456'
       POSTGRES_DB: 'ilovecoffee-postgres'
 
-# docker compose up -d
+# docker compose up -d   — create and start the container in the background
+# docker compose down -v — stop and remove the container and volume (DB data is lost)
