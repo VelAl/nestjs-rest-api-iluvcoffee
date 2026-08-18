@@ -9,7 +9,7 @@ import {
 export class CreateCoffeeDto {
   @IsString()
   @IsNotEmpty()
-  readonly name!: string;
+  readonly title!: string;
 
   @IsString()
   @IsNotEmpty()
